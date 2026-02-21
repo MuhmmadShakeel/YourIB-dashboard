@@ -42,7 +42,7 @@ function Faq() {
     };
 
     return (
-        <div className="w-full lg:w-[74%] lg:ml-78 px-4 md:px-8 mt-8 mb-12">
+        <div className="w-full lg:w-[74%] lg:ml-78 px-4 md:px-8 mt-0 mb-12">
 
 
             <div className="rounded-[20px] p-4 md:p-6 mb-6">
@@ -77,11 +77,11 @@ function Faq() {
 
                                 <div className="flex-shrink-0">
                                     {activeIndex === index ? (
-                                        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-900 text-white">
+                                        <div className="w-8 h-8 flex cursor-pointer items-center justify-center rounded-full bg-blue-900 text-white">
                                             <Minus size={16} />
                                         </div>
                                     ) : (
-                                        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-600">
+                                        <div className="w-8 h-8 flex cursor-pointer items-center justify-center rounded-full bg-gray-200 text-gray-600">
                                             <Plus size={16} />
                                         </div>
                                     )}

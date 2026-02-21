@@ -46,7 +46,7 @@ const messages = [
 
 function Community() {
     return (
-        <div className="w-full lg:w-[74%] lg:ml-78 px-4 md:px-8 mt-8 mb-10">
+        <div className="w-full lg:w-[74%] lg:ml-78 px-4 md:px-8 mt-0 mb-10">
 
             <div className="bg-white rounded-[24px] border border-gray-100 shadow-sm overflow-hidden">
 

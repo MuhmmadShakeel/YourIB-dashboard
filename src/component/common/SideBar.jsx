@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "../../assets/images/Logo.png";
 import {
   Menu,
   X,
@@ -33,13 +34,9 @@ const SideBar = () => {
 
   return (
     <>
-      {/* ===== Mobile Header ===== */}
       <header className="md:hidden fixed top-0 left-0 w-full bg-white border-b border-gray-200 z-50 px-4 py-3 flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-2">
-          <div className="text-2xl font-black text-blue-900">W</div>
-          <span className="text-[10px] font-bold tracking-widest text-blue-900 uppercase">
-            YOUR IB
-          </span>
+          <img src={Logo} alt="Logo" className="h-8 w-auto" />
         </div>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -50,7 +47,6 @@ const SideBar = () => {
         </button>
       </header>
 
-      {/* ===== Mobile Overlay ===== */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
@@ -58,50 +54,49 @@ const SideBar = () => {
         />
       )}
 
-      {/* ===== Sidebar ===== */}
       <aside
         className={`
           fixed top-0 left-0 z-50 h-screen w-[280px] lg:w-[300px]
-          bg-[#f9fafb] border-r border-gray-200
+          bg-white border-r border-gray-100
           flex flex-col
           transition-transform duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0
-          pt-0 md:pt-10
         `}
       >
-        {/* Logo */}
-        <div className="hidden md:flex flex-col items-start px-8 pt-10 pb-6">
-          <h1 className="text-5xl font-black text-blue-900 leading-none tracking-tighter">
-            W
-          </h1>
-          <p className="text-[10px] font-bold tracking-[0.3em] text-blue-900 mt-2 uppercase opacity-80">
-            YOUR IB SOLUTIONS
-          </p>
+        <div className="hidden md:flex flex-col items-start px-8 pt-8 pb-4">
+          <img src={Logo} alt="Logo" className="w-24 h-auto" />
+          <div className="mt-2">
+            <span className="text-[11px] font-bold tracking-[0.2em] text-[#002d72] block">YOUR</span>
+            <span className="text-[8px] font-bold tracking-[0.1em] text-[#002d72] block">I B</span>
+          </div>
         </div>
 
-        {/* Community Card */}
-        <div className="px-4 mt-4 md:mt-0 mb-6 flex-shrink-0">
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-3.5 flex items-center gap-3">
+        <div className="px-4 mb-6 mt-2 flex-shrink-0">
+          <div className="bg-white rounded-2xl border border-gray-100 p-3 flex items-center gap-3 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
             <div className="flex -space-x-2">
               <img
                 src="https://randomuser.me/api/portraits/women/44.jpg"
                 alt="member"
-                className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm"
+                className="w-8 h-8 rounded-full border-2 border-white object-cover"
               />
               <img
                 src="https://randomuser.me/api/portraits/men/32.jpg"
                 alt="member"
-                className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm"
+                className="w-8 h-8 rounded-full border-2 border-white object-cover"
+              />
+              <img
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="member"
+                className="w-8 h-8 rounded-full border-2 border-white object-cover"
               />
             </div>
-            <div className="text-gray-700 text-[13px] font-bold truncate">
-              Members X’s Community
+            <div className="text-[#4b5563] text-[13px] font-semibold truncate">
+              Members X’S C...
             </div>
           </div>
         </div>
 
-        {/* Navigation */}
         <nav className="flex-1 overflow-y-auto px-3 space-y-1 scrollbar-hide pb-6">
           {menuItems.map((item) => (
             <NavLink
@@ -109,26 +104,28 @@ const SideBar = () => {
               to={item.path}
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-4 px-6 py-3.5 rounded-2xl text-gray-500 transition-all duration-300 group ${isActive
-                  ? "bg-blue-50 text-blue-700 shadow-sm font-semibold"
-                  : "hover:bg-white hover:text-blue-600"
+                `relative flex items-center gap-4 px-6 py-4 rounded-2xl transition-all duration-200 group ${isActive
+                  ? "bg-[#ebf2ff] text-[#0047ab] font-bold"
+                  : "text-[#64748b] hover:bg-gray-50 hover:text-gray-900"
                 }`
               }
             >
               {({ isActive }) => (
                 <>
+                  {isActive && (
+                    <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-[#0047ab] rounded-r-full" />
+                  )}
+
                   <item.icon
-                    size={20}
+                    size={22}
+                    strokeWidth={isActive ? 2.5 : 2}
                     className={
                       isActive
-                        ? "text-blue-700"
-                        : "text-gray-400 group-hover:text-blue-600"
+                        ? "text-[#0047ab]"
+                        : "text-[#94a3b8] group-hover:text-gray-600"
                     }
                   />
-                  <span className="text-[15px]">{item.name}</span>
-                  {isActive && (
-                    <span className="ml-auto w-1.5 h-5 bg-blue-700 rounded-full" />
-                  )}
+                  <span className="text-[16px]">{item.name}</span>
                 </>
               )}
             </NavLink>
@@ -136,7 +133,6 @@ const SideBar = () => {
         </nav>
       </aside>
 
-      {/* Hide scrollbar */}
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
           display: none;

@@ -64,7 +64,7 @@ function Signal() {
     };
 
     return (
-        <div className="w-full lg:w-[74%] lg:ml-78 px-4 md:px-8 mt-8 mb-10">
+        <div className="w-full lg:w-[74%] lg:ml-78 px-4 md:px-8 mt-0 mb-10">
             <div className="relative w-full mb-6">
                 <Search
                     size={18}

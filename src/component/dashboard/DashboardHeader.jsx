@@ -10,7 +10,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-function HomeHeader() {
+function DashboardHeader() {
   const stats = [
     {
       title: "Total Commission",
@@ -53,7 +53,7 @@ function HomeHeader() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-4 lg:p-5 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                className="bg-white rounded-2xl p-4 mt-0 h-32 lg:p-5 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Top Section */}
                 <div className="flex justify-between items-start mb-4">
@@ -112,4 +112,4 @@ function HomeHeader() {
   );
 }
 
-export default HomeHeader;
+export default DashboardHeader;

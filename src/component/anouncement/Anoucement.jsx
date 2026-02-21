@@ -42,7 +42,7 @@ function Anoucement() {
     ];
 
     return (
-        <div className="w-full lg:w-[74%] lg:ml-78 px-4 md:px-8 mt-8 mb-10">
+        <div className="w-full lg:w-[74%] lg:ml-78 px-4 md:px-8 mt-0 mb-10">
 
             <div className="p-4 md:p-6 mb-6">
                 <div className="flex flex-col sm:flex-row gap-3 w-full">
@@ -55,11 +55,11 @@ function Anoucement() {
                         <input
                             type="text"
                             placeholder="Search announcements..."
-                            className="w-full pl-9 pr-3 py-2.5 rounded-lg border focus:ring-2 focus:ring-blue-500 focus:bg-white focus:outline-none text-sm transition-all duration-200"
+                            className="w-full pl-9 pr-3 py-2.5 rounded-lg border border-gray-300 focus:ring-blue-500 focus:bg-white focus:outline-none text-sm transition-all duration-200"
                         />
                     </div>
 
-                    <button className="flex items-center justify-center gap-2 bg-blue-900 text-white px-5 py-2.5 rounded-lg shadow-sm hover:bg-blue-800 hover:shadow-md transition-all duration-200 text-sm font-semibold whitespace-nowrap">
+                    <button className="flex cursor-pointer items-center justify-center gap-2 bg-blue-900 text-white px-5 py-2.5 rounded-lg shadow-sm hover:bg-blue-800 hover:shadow-md transition-all duration-200 text-sm font-semibold whitespace-nowrap">
                         <Plus size={16} />
                         Add New
                     </button>
@@ -67,13 +67,13 @@ function Anoucement() {
                 </div>
             </div>
 
-            <div className="rounded-[24px]">
+            <div className="rounded-[24px] mb-34">
 
-                <div className="p-4 md:p-6 space-y-3">
+                <div className="p-4 md:p-6 space-y-3 x">
                     {announcements.map((item, index) => (
                         <div
                             key={index}
-                            className="flex flex-col p-4 rounded-xl bg-white hover:shadow-sm transition-all duration-200 border border-gray-100 hover:border-gray-200"
+                            className="flex flex-col p-4  rounded-xl bg-white hover:shadow-sm transition-all duration-200 border border-gray-100 hover:border-gray-200"
                         >
                             <div className="flex items-start gap-3">
                                 {item.pinned && (
